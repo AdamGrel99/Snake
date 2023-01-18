@@ -75,7 +75,7 @@ void game_Option() {
 		break;
 	}
 
-	system("pause");
+	system("pause>0");
 
 	if (GetAsyncKeyState(VK_RETURN)) {
 		switch (option) {
@@ -180,7 +180,7 @@ void game_Instruction() {
 	cout << "In Options you can change size of board and snake speed." << endl;
 	cout << "You can go back with a ESC key in any window." << endl;
 
-	system("pause");
+	system("pause>0");
 
 	if (GetAsyncKeyState(VK_ESCAPE)) {
 		mode = MAIN;
@@ -225,7 +225,7 @@ void main_Menu() {
 		break;
 	}
 	
-	system("pause");
+	system("pause>0");
 
 	if (GetAsyncKeyState(VK_RETURN)) {
 		switch (menu) {
