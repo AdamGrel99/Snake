@@ -38,6 +38,14 @@ void idzdoxy(int x, int y) {
 	SetConsoleCursorPosition(hCon, dwPos);
 }
 
+void HideCursor() {
+	::HANDLE hConsoleOut = ::GetStdHandle(STD_OUTPUT_HANDLE);
+	::CONSOLE_CURSOR_INFO hCCI;
+	::GetConsoleCursorInfo(hConsoleOut, &hCCI);
+	hCCI.bVisible = FALSE;
+	::SetConsoleCursorInfo(hConsoleOut, &hCCI);
+}
+
 void game_Over() {
 	tailLength = 0;
 	score = 0;
@@ -437,6 +445,7 @@ void game_Logic() {
 
 void startGame() {
 	game_Setup();
+	HideCursor();
 	while (true) {
 		if (mode == MAIN) {
 			main_Menu();
